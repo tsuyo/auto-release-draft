@@ -16,8 +16,7 @@ jobs:
       - name: Get the sources
         uses: actions/checkout@v1
       - name: Build and Package
-        run: npm ci
-        run: npm run all
+        run: npm ci && npm run all
       - name: Create a release draft for a version tag
         id: create-release-draft
         uses: ./
