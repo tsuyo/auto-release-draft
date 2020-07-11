@@ -12,5 +12,5 @@ export function getCreatedTag(): string | null {
         return null
     }
 
-    return github.context.palyload.ref
+    return github.context.payload.ref
 }
