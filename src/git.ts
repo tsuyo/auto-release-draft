@@ -58,7 +58,7 @@ export async function getCommitMessagesBetween(
     silent: true
   }
 
-  const exitCode = await exec(
+  await exec(
     'git',
     ['log', '--format=%s', `${firstTag}..${secondTag}`],
     options
@@ -83,7 +83,7 @@ export async function getCommitMessagesFrom(tag: string): Promise<string> {
     silent: true
   }
 
-  const exitCode = await exec('git', ['log', '--format=%s', tag], options)
+  await exec('git', ['log', '--format=%s', tag], options)
 
   core.debug(`The commit messages from ${tag} are:\n${commitMessages}`)
 
